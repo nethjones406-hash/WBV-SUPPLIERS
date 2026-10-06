@@ -1,0 +1,510 @@
+Yep — here’s your **full HTML with the purple completely changed to green**. I kept everything else the same.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wholesale Source</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #222;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #39ff88;
+    transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    line-height: 0.95;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #39ff88;
+}
+
+.hero p {
+    color: #999;
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 28px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(57, 255, 136, 0.25);
+}
+
+/* PRODUCTS */
+.products-section {
+    padding: 100px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title h2 {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #888;
+}
+
+/* 9 SLOTS */
+.products-grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    position: relative;
+    background: #0c0c0c;
+    border: 1px solid #202020;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.35s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: #39ff88;
+    box-shadow: 0 15px 45px rgba(57, 255, 136, 0.09);
+}
+
+.product-image {
+    height: 260px;
+    background: #111;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.07);
+}
+
+.discount {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #39ff88;
+    color: #080808;
+    padding: 7px 11px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-info h3 {
+    font-size: 21px;
+    margin-bottom: 9px;
+}
+
+.product-info p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 42px;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.old-price {
+    color: #666;
+    text-decoration: line-through;
+}
+
+.percent {
+    color: #39ff88;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.access-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 13px;
+    border-radius: 9px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.access-btn:hover {
+    background: #39ff88;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid #202020;
+    text-align: center;
+    padding: 35px;
+    color: #666;
+    margin-top: 50px;
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .nav-links {
+        gap: 15px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-section {
+        padding: 70px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">GXOSUPPLY</div>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>YOUR SOURCE FOR <span>WHOLESALE</span></h1>
+
+        <p>
+            Find quality products and wholesale opportunities
+            all in one place.
+        </p>
+
+        <a href="#products" class="hero-btn">Browse Products</a>
+    </div>
+</section>
+
+
+<section class="products-section" id="products">
+
+    <div class="section-title">
+        <h2>Our Products</h2>
+        <p>Choose from our available wholesale selections.</p>
+    </div>
+
+
+    <div class="products-grid">
+
+        <!-- PRODUCT 1 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="product1.jpg" alt="Elite Wholesaler Bundle">
+            </div>
+
+            <span class="discount">WHOLESALE</span>
+
+            <div class="product-info">
+                <h3>Elite Wholesaler Bundle</h3>
+                <p>Premium multi-category supplier access. Instant download link sent to your email after purchase.</p>
+
+                <div class="price-row">
+                    <span class="price">$34.99</span>
+                </div>
+
+                <a href="#" class="access-btn">Get Access</a>
+            </div>
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="product2.jpg" alt="Starter Wholesaler Bundle">
+            </div>
+
+            <span class="discount">WHOLESALE</span>
+
+            <div class="product-info">
+                <h3>Starter Wholesaler Bundle</h3>
+                <p>The perfect entry point. Get plugged into top suppliers and start flipping for profit fast.</p>
+
+                <div class="price-row">
+                    <span class="price">$24.99</span>
+                </div>
+
+                <a href="#" class="access-btn">Get Access</a>
+            </div>
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="product3.jpg" alt="Clothing Wholesaler Bundle">
+            </div>
+
+            <span class="discount">WHOLESALE</span>
+
+            <div class="product-info">
+                <h3>Clothing Wholesaler Bundle</h3>
+                <p>Access premium clothing suppliers. Source and flip fashion items for serious margins.</p>
+
+                <div class="price-row">
+                    <span class="price">$14.49</span>
+                </div>
+
+                <a href="#" class="access-btn">Get Access</a>
+            </div>
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="product4.jpg" alt="Cologne Wholesaler Bundle">
+            </div>
+
+            <span class="discount">WHOLESALE</span>
+
+            <div class="product-info">
+                <h3>Cologne Wholesaler Bundle</h3>
+                <p>Fragrance is one of the easiest flips. Get connected to cologne suppliers and start selling today.</p>
+
+                <div class="price-row">
+                    <span class="price">$11.99</span>
+                </div>
+
+                <a href="#" class="access-btn">Get Access</a>
+            </div>
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="product5.jpg" alt="Lulu Clothes Wholesaler">
+            </div>
+
+            <span class="discount">NEW DROP</span>
+
+            <div class="product-info">
+                <h3>Lulu Clothes Wholesaler</h3>
+                <p>New drop. Lululemon style activewear. Massive demand and massive margins.</p>
+
+                <div class="price-row">
+                    <span class="price">$9.99</span>
+                </div>
+
+                <a href="#" class="access-btn">Get Access</a>
+            </div>
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="product6.jpg" alt="Electronic Wholesaler Bundle">
+            </div>
+
+            <span class="discount">WHOLESALE</span>
+
+            <div class="product-info">
+                <h3>Electronic Wholesaler Bundle</h3>
+                <p>Consumer electronics move fast. Get your supplier access and start selling high demand tech.</p>
+
+                <div class="price-row">
+                    <span class="price">$11.99</span>
+                </div>
+
+                <a href="#" class="access-btn">Get Access</a>
+            </div>
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="product7.jpg" alt="Moissanite Watch Wholesaler">
+            </div>
+
+            <span class="discount">WHOLESALE</span>
+
+            <div class="product-info">
+                <h3>Moissanite Watch Wholesaler</h3>
+                <p>Iced out timepieces at wholesale prices. One of the hottest resell categories right now.</p>
+
+                <div class="price-row">
+                    <span class="price">$14.99</span>
+                </div>
+
+                <a href="#" class="access-btn">Get Access</a>
+            </div>
+        </div>
+
+
+        <!-- PRODUCT 8 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="product8.jpg" alt="Sunglasses Wholesaler">
+            </div>
+
+            <span class="discount">WHOLESALE</span>
+
+            <div class="product-info">
+                <h3>Sunglasses Wholesaler</h3>
+                <p>High demand accessory. Easy to ship, easy to flip, and the margins are ridiculous.</p>
+
+                <div class="price-row">
+                    <span class="price">$9.99</span>
+                </div>
+
+                <a href="#" class="access-btn">Get Access</a>
+            </div>
+        </div>
+
+
+        <!-- PRODUCT 9 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="product9.jpg" alt="Shoe Wholesaler">
+            </div>
+
+            <span class="discount">WHOLESALE</span>
+
+            <div class="product-info">
+                <h3>Shoe Wholesaler</h3>
+                <p>Sneakers sell themselves. Get into footwear wholesale and start scaling your resell game fast.</p>
+
+                <div class="price-row">
+                    <span class="price">$9.99</span>
+                </div>
+
+                <a href="#" class="access-btn">Get Access</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<footer id="contact">
+    © 2026 GXOSUPPLY — All Rights Reserved - Made by Ca'Marlon Jones
+</footer>
+
+</body>
+</html>
+```
